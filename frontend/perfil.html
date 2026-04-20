@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Perfil - Plataforma Sostenible</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="productos.html" class="logo-link">🌱 Sostenible</a>
+        </div>
+        <div class="header-center">
+          <div class="user-profile-header">
+            <div id="avatarHeaderContainer" class="avatar-header">
+              🌱
+            </div>
+            <div class="user-header-info">
+              <a href="productos.html" id="nombreHeaderLink" class="user-name-link">🌱 Usuario</a>
+              <span class="user-title">Mi Perfil</span>
+            </div>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <button id="btnSalir" class="btn btn-danger" style="display:none;">Cerrar sesión</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="content-wrapper">
+        <div class="container">
+          <!-- Tarjeta de Perfil Principal -->
+          <div class="profile-hero">
+            <div class="profile-card">
+              <div class="profile-backdrop"></div>
+              <div class="profile-content">
+                <div class="profile-avatar-large">
+                  <div id="avatarContainerLarge" class="avatar-large">🌱</div>
+                </div>
+                <div class="profile-header-meta">
+                  <div>
+                    <h2 id="profileName" class="profile-title">Nombre del Usuario</h2>
+                    <p id="profileEmail" class="profile-email">correo@ejemplo.com</p>
+                  </div>
+                  <div class="profile-badge">Perfil activo</div>
+                </div>
+                <p id="profileDescription" class="profile-description">Contribuyendo al medio ambiente con compras sostenibles</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-grid">
+            <!-- Panel Izquierdo - Formulario -->
+            <div class="profile-form-panel">
+              <h3 class="section-title">✏️ Editar Información Personal</h3>
+
+              <form id="formularioPerfil" class="form-modern">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input id="nombre" type="text" placeholder="Tu nombre completo" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input id="telefono" type="tel" placeholder="Tu número de teléfono" />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="ciudad">Ciudad</label>
+                    <input id="ciudad" type="text" placeholder="Tu ciudad" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input id="fechaNacimiento" type="date" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="direccion">Dirección completa</label>
+                  <textarea id="direccion" placeholder="Tu dirección completa" style="min-height: 80px;"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="descripcion">Sobre mí</label>
+                  <textarea id="descripcion" placeholder="Cuéntanos un poco sobre ti y tus intereses en productos sostenibles..." style="min-height: 100px;"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>📸 Foto de perfil</label>
+                  <div class="avatar-upload">
+                    <div class="upload-section">
+                      <label class="upload-label">Subir desde tu dispositivo:</label>
+                      <input id="avatarFile" type="file" accept="image/*" class="file-input" />
+                      <small>Máximo 5MB. Formatos: JPG, PNG, GIF, WebP</small>
+                    </div>
+                    <div class="upload-divider">O</div>
+                    <div class="upload-section">
+                      <label class="upload-label">Usar URL de imagen:</label>
+                      <input id="avatar" type="url" placeholder="https://ejemplo.com/tu-avatar.jpg" />
+                    </div>
+                  </div>
+                </div>
+
+                <div id="msg" class="alert" style="display:none;"></div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-large">💾 Guardar Cambios</button>
+                  <button type="button" id="btnCancelar" class="btn btn-secondary btn-large">↶ Cancelar</button>
+                </div>
+              </form>
+
+              <!-- Sección Cambio de Contraseña -->
+              <div class="section-divider">
+                <h3 class="section-title">🔐 Cambiar Contraseña</h3>
+                <form id="formChangePass" class="form-modern">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Contraseña actual</label>
+                      <input id="passVieja" type="password" placeholder="Tu contraseña actual" required />
+                    </div>
+                    <div class="form-group">
+                      <label>Nueva contraseña</label>
+                      <input id="passNueva" type="password" placeholder="Nueva contraseña segura" required />
+                    </div>
+                  </div>
+                  <div id="msgPass" class="alert" style="display:none;"></div>
+                  <button type="submit" class="btn btn-primary">🔄 Cambiar Contraseña</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Panel Derecho - Estadísticas -->
+            <div class="profile-stats-panel">
+              <div class="stats-card">
+                <h3 class="stats-title">📊 Mi Actividad</h3>
+                <div class="stat-item">
+                  <div class="stat-icon">📦</div>
+                  <div class="stat-content">
+                    <div class="stat-label">Pedidos Realizados</div>
+                    <div class="stat-value">0</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-icon">💰</div>
+                  <div class="stat-content">
+                    <div class="stat-label">Total Gastado</div>
+                    <div class="stat-value">$0</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-icon">⭐</div>
+                  <div class="stat-content">
+                    <div class="stat-label">Valoración Promedio</div>
+                    <div class="stat-value">N/A</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stats-card">
+                <h3 class="stats-title">🌱 Sostenibilidad</h3>
+                <div class="sustainability-badge">
+                  <div class="badge-icon">🌿</div>
+                  <div class="badge-content">
+                    <div class="badge-title">Eco-Amigable</div>
+                    <p>Gracias por apoyar productos sostenibles y contribuir al cuidado del medio ambiente.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stats-card">
+                <h3 class="stats-title">🔗 Enlaces Rápidos</h3>
+                <a href="productos.html" class="quick-link">🛍️ Ver Productos</a>
+                <a href="historial-pedidos.html" class="quick-link">📜 Mis Pedidos</a>
+                <a href="carrito.html" class="quick-link">🛒 Mi Carrito</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sección Olvidé Contraseña -->
+          <div class="forgot-password-section">
+            <h3 class="section-title">🔒 ¿Olvidaste tu contraseña?</h3>
+            <div class="forgot-container">
+              <input id="emailForgot" type="email" placeholder="Tu correo electrónico" />
+              <button id="btnForgot" class="btn btn-secondary">📧 Enviar Email de Recuperación</button>
+              <div id="msgForgot" class="alert" style="display:none;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>🔒 Plataforma segura para productos sostenibles | 🌱 Contribuyendo al medio ambiente</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="header-utils.js"></script>
+  <script src="app-perfil.js"></script>
+</body>
+</html>

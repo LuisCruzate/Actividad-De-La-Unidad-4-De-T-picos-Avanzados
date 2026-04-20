@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Productos Sostenibles</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Elementos decorativos flotantes -->
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
+
+  <div class="login-page">
+    <div class="login-container">
+      <div class="login-header">
+        <h1>🌱</h1>
+        <h1>Plataforma Sostenible</h1>
+        <p>Accede a nuestro catálogo de productos ecológicos</p>
+      </div>
+
+      <div class="card">
+        <h3>🔐 Iniciar sesión</h3>
+        <input id="loginCorreo" type="email" placeholder="📧 Correo electrónico" />
+        <input id="loginPass" type="password" placeholder="🔐 Contraseña" />
+        <button id="btnLogin">Entrar</button>
+        <p style="text-align: center; margin-top: 15px; color: var(--secondary-color);">
+          ¿No tienes cuenta? <a href="registro.html">Regístrate ahora</a>
+        </p>
+      </div>
+
+      <div id="msg" class="card" style="display:none;"></div>
+
+      <p style="text-align: center; margin-top: 20px;">
+        <a id="toProductos" href="productos.html">Ver catálogo sin iniciar sesión</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="app-login.js"></script>
+</body>
+</html>

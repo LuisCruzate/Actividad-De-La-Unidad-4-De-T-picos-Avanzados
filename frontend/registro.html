@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro - Productos Sostenibles</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Elementos decorativos flotantes -->
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
+
+  <div class="login-page">
+    <div class="login-container">
+      <div class="login-header">
+        <h1>🌱</h1>
+        <h1>Crear Cuenta</h1>
+        <p>Únete a nuestra comunidad de productos sostenibles</p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Registro</h3>
+        <input id="regNombre" placeholder="👤 Nombre (opcional)" />
+        <input id="regCorreo" type="email" placeholder="📧 Correo electrónico" />
+        <input id="regPass" type="password" placeholder="🔐 Contraseña" />
+        <button id="btnRegistro">Crear cuenta</button>
+        <p style="text-align: center; margin-top: 15px; color: var(--secondary-color);">
+          ¿Ya tienes cuenta? <a href="index.html">Inicia sesión aquí</a>
+        </p>
+      </div>
+
+      <div id="msg" class="card" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script src="app-registro.js"></script>
+</body>
+</html>

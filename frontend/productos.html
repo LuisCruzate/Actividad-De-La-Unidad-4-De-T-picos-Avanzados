@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos - Plataforma Sostenible</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Productos Sostenibles</h1>
+        <nav class="header-nav">
+          <span id="usuarioInfo"></span>
+          <a href="perfil.html" class="btn-header" id="btnPerfil" style="display:none;">👤 Perfil</a>
+          <a href="historial-pedidos.html" class="btn-header" id="btnHistorial" style="display:none;">📦 Pedidos</a>
+          <a href="carrito.html" class="btn-header" id="btnCarrito" style="display:none;">🛒 Carrito</a>
+          <button id="btnAgregarProducto" class="btn-header" style="display:none;">➕ Agregar</button>
+          <button id="btnSalir" style="display:none;">Cerrar sesión</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- Botones de Categorías -->
+        <div class="card">
+          <h3>🏷️ Filtrar por categoría</h3>
+          <div id="categoriasButtons" class="category-buttons">
+            <button class="category-btn active" data-category="all">Todos los productos</button>
+          </div>
+        </div>
+
+        <!-- Lista de Productos -->
+        <div id="productosContainer"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>🔒 Plataforma segura de productos sostenibles - Todos los derechos reservados</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="header-utils.js"></script>
+  <script src="app-productos.js"></script>
+</body>
+</html>

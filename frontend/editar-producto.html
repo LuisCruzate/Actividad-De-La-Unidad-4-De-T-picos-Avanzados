@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar Producto - Plataforma Sostenible</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="header">
+      <div class="header-content">
+        <h1>✏️ Editar Producto</h1>
+        <nav class="header-nav">
+          <div class="user-info">
+            <span id="usuarioInfo">👤 Usuario</span>
+            <button id="btnSalir" class="btn btn-secondary" style="display:none;">Cerrar sesión</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="content-wrapper">
+        <div class="container">
+          <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <h2 style="color: var(--primary-color); margin-bottom: 0.5rem;">📝 Modificar Producto Sostenible</h2>
+              <p style="color: var(--text-secondary);">Actualiza la información de tu producto ecológico</p>
+            </div>
+
+            <form id="formularioProducto">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label for="nombre" style="display: block; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: 600;">Nombre del producto *</label>
+                  <input id="nombre" type="text" placeholder="Ej: Tomate Orgánico" required
+                         style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius); font-size: 1rem;" />
+                </div>
+
+                <div class="form-group">
+                  <label for="categoria" style="display: block; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: 600;">Categoría *</label>
+                  <input id="categoria" type="text" placeholder="Ej: Verduras, Frutas, Lácteos" required
+                         style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius); font-size: 1rem;" />
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label for="precio" style="display: block; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: 600;">Precio (COP) *</label>
+                  <input id="precio" type="number" placeholder="Ej: 15990" step="1" required
+                         style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius); font-size: 1rem;" />
+                </div>
+
+                <div class="form-group">
+                  <label for="stock" style="display: block; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: 600;">Stock disponible *</label>
+                  <input id="stock" type="number" placeholder="Ej: 50" required
+                         style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius); font-size: 1rem;" />
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="descripcion" style="display: block; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: 600;">Descripción (opcional)</label>
+                <textarea id="descripcion" placeholder="Describe el producto, origen, beneficios, etc."
+                          style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius); font-size: 1rem; min-height: 100px; resize: vertical;"></textarea>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 2rem;">
+                <label for="imagenes" style="display: block; margin-bottom: 0.5rem; color: var(--primary-color); font-weight: 600;">📸 Imágenes del producto</label>
+
+                <div style="background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(16, 185, 129, 0.05)); padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem;">
+                  <p style="color: var(--text-secondary); margin-bottom: 0.75rem; font-size: 0.9rem;">Imágenes actuales del producto:</p>
+                  <div id="imagePreview" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.75rem;"></div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                  <label style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.5rem;">Agregar nuevas imágenes por archivo:</label>
+                  <input id="imagenes" type="file" multiple accept="image/*"
+                         style="width: 100%; padding: 1rem; border: 2px dashed var(--border-color); border-radius: var(--radius); background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(16, 185, 129, 0.05)); cursor: pointer; transition: all 0.3s;" />
+                  <small style="color: var(--text-secondary); display: block; margin-top: 0.5rem;">Máximo 5MB por imagen.</small>
+                </div>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                  <label style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.5rem;">O agregar por URL:</label>
+                  <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.5rem;">
+                    <input id="urlImagen" type="url" placeholder="https://ejemplo.com/imagen.jpg"
+                           style="padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius); font-size: 1rem;" />
+                    <button type="button" id="btnAgregarUrl" class="btn btn-secondary">Agregar URL</button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="msg" class="card" style="display:none; margin-bottom: 2rem;"></div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <button type="submit" class="btn btn-primary" style="padding: 0.875rem 1.5rem; font-size: 1.1rem;">💾 Guardar Cambios</button>
+                <a href="productos.html" class="btn btn-secondary" style="padding: 0.875rem 1.5rem; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">← Volver a Productos</a>
+              </div>
+
+              <button type="button" id="btnEliminarProducto" class="btn" style="width: 100%; padding: 0.875rem 1.5rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-size: 1.1rem; font-weight: 600;">🗑️ Eliminar Producto</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>🔒 Plataforma segura para productos sostenibles | 🌱 Contribuyendo al medio ambiente</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="header-utils.js"></script>
+  <script src="app-editar-producto.js"></script>
+</body>
+</html>
