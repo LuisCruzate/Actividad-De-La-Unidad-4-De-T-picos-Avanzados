@@ -97,4 +97,6 @@ mongoose.connect(MONGO, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error("❌ Error de conexión:", err));
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Servidor backend en puerto ${PORT}`));
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Servidor corriendo en http://0.0.0.0:${PORT}`);
+});
